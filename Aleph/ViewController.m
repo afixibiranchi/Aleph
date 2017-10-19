@@ -22,11 +22,11 @@ typedef NS_ENUM(NSInteger, CellAnimationDirection) {
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
-@property (nonatomic, weak) IBOutlet UITableView *aTableView;
-@property (nonatomic, strong) NSMutableArray *listArr;
+@property (nonatomic, weak) IBOutlet UITableView    *aTableView;
+@property (nonatomic, strong) NSMutableArray        *listArr;
 
-@property (nonatomic, strong) UIView *tableHeaderView;
-@property (nonatomic, strong) UIView *tableFooterView;
+@property (nonatomic, strong) UIView                *tableHeaderView;
+@property (nonatomic, strong) UIView                *tableFooterView;
 
 @property (nonatomic, assign) CellAnimationDirection cellAnimationDirection;
 
@@ -59,7 +59,6 @@ typedef NS_ENUM(NSInteger, CellAnimationDirection) {
 
     [self createTableHeaderView];
     [self createTableFooterView];
-    
     
 }
 
@@ -250,10 +249,7 @@ typedef NS_ENUM(NSInteger, CellAnimationDirection) {
             
         }
         
-        
-
     }
-    
     
 }
 
@@ -266,13 +262,10 @@ typedef NS_ENUM(NSInteger, CellAnimationDirection) {
     CGRect tableHeaderViewFrame         = self.tableHeaderView.frame;
     tableHeaderViewFrame.size.height    = TABLE_HEADERVIEW_HEIGHT;
     
-    
     CGRect tableViewFrame               = self.aTableView.frame;
     tableViewFrame.size.height          =  EXPANDED_TABLEVIEW_HEIGHT;
     
-    
     [self.aTableView setContentOffset:CGPointMake(0, 0) animated:YES];
-    
     
     [UIView animateWithDuration:0.3 animations:^{
         
@@ -281,10 +274,8 @@ typedef NS_ENUM(NSInteger, CellAnimationDirection) {
 
     }];
     
-    
     self.tableFooterView.hidden         = YES;
     [self.aTableView reloadData];
-
 
 }
 
